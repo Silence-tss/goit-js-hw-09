@@ -10,6 +10,8 @@ function onClickButtonStart() {
     // buttonStart.classList.toggle("active").disabled = true;
     timerId = setInterval(() => {
     bodySite.style.backgroundColor= getRandomHexColor()}, 1000);
+    buttonStart.disabled = true;
+    buttonStop.disabled = false;
 };
 
 function getRandomHexColor() {
@@ -22,5 +24,7 @@ buttonStop.addEventListener("click", onClickButtonStop);
 
 function onClickButtonStop() {
     clearInterval(timerId);
+    buttonStart.disabled = false;
+    buttonStop.disabled = true;
 }
 
